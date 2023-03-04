@@ -36,3 +36,4 @@ lerna-debug.log*
 /development.env
 /package-lock.json
 /production.env
+/.env

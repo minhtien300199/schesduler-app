@@ -1,0 +1,13 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "17932486",
+  "database": "scheduler",
+  "entities": ["src/models/**/*.ts"],
+  "migrations": ["src/migrations/*.ts", "dist/migrations/*{.ts,.js}"],
+  "cli": {
+    "migrationsDir": "src/migration"
+  }
+}

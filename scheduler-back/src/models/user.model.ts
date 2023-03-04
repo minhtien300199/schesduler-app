@@ -28,6 +28,9 @@ export default class User implements ITracking {
     DateDeleted: Date;
     @UpdateDateColumn()
     DateModified: Date;
+    @Column({ type: 'varchar', length: 255 })
+    Password: string;
+
 
     @OneToMany(() => UserRole, (ur) => ur.user)
     userRoles: UserRole[];
@@ -38,4 +41,5 @@ export default class User implements ITracking {
     @OneToOne(() => UserSetting)
     @JoinColumn()
     profile: UserSetting;
+
 }

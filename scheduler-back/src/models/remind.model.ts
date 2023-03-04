@@ -14,7 +14,7 @@ export default class Remind implements ITracking {
     Description: string;
     @Column({ default: false })
     IsSilent: boolean;
-    @Column({ type: 'timestamptz' })
+    @Column({ type: 'datetime' })
     DueTime: Date;
     @Column({ default: 0 })
     SnoozeTime: number;
