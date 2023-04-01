@@ -3,8 +3,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 class CustomButton extends StatelessWidget {
-  CustomButton({super.key, required this.onPress, this.title = "Button"});
-  void Function() onPress;
+  CustomButton({super.key, this.onPress, this.title = "Button"});
+  void Function()? onPress;
   String title;
   @override
   Widget build(BuildContext context) {

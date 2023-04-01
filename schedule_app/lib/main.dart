@@ -6,6 +6,7 @@ import 'components/login/login.dart';
 import 'data/repositories/ServiceLocator.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   startUpConfiguration();
   runApp(MyApp());
 }
