@@ -13,7 +13,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
-  final AppRouter _appRouter = new AppRouter();
+  final AppRouter _appRouter = AppRouter();
 
   // This widget is the root of your application.
   @override
@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      home: const HomePage(),
       onGenerateRoute: _appRouter.onGenerateRoute,
     );
   }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:schedule_app/business_logics/cubits/login_cubit_cubit.dart';
+import 'package:schedule_app/components/dashboard/cubits/dashboard_cubit.dart';
+import 'package:schedule_app/components/dashboard/dashboard.dart';
 import 'package:schedule_app/components/mainpage/home_cubit.dart';
 
 import '../../Interfaces/I_login_repository.dart';
@@ -13,6 +15,7 @@ class AppRouter {
   Route? onGenerateRoute(RouteSettings routes) {
     final LoginCubit _loginCubit = LoginCubit(loginRepository);
     final HomeCubit _homeCubit = HomeCubit();
+    final DashboardCubit _dashboardCubit = DashboardCubit();
     switch (routes.name) {
       case '/home':
         return MaterialPageRoute(
@@ -26,6 +29,12 @@ class AppRouter {
             value: _loginCubit,
             child: Login(),
           ),
+        );
+        break;
+      case '/dashboard':
+        return MaterialPageRoute(
+          builder: (_) =>
+              BlocProvider.value(value: _dashboardCubit, child: Dashboard()),
         );
         break;
       default:
